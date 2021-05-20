@@ -125,7 +125,7 @@ public class GeoCodeUtil {
             if (point.x() >= Math.max(p1.x(), p2.x())) // 交点在p1p2延长线上
                 continue;
             // 求交点的 X 坐标
-            double x = (double) (point.x() - p1.x()) * (double) (p2.y() - p1.y()) / (double) (p2.x() - p1.x()) + p1.y();
+            double x = (point.x() - p1.x()) * (p2.y() - p1.y()) / (p2.x() - p1.x()) + p1.y();
             if (x > point.y())
                 nCross++; // 只统计单边交点
         }
